@@ -8,6 +8,7 @@ class WidgetUtils {
     required Size size,
     TextAlign? textAlign,
     Color? color,
+    int? maxLines,
   }) {
     return AutoSizeText(
       text,
@@ -16,7 +17,7 @@ class WidgetUtils {
             color: color,
           ),
       textAlign: textAlign,
-      maxLines: 1,
+      maxLines: maxLines,
     );
   }
 

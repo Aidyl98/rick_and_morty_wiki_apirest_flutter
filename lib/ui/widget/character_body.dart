@@ -172,6 +172,7 @@ class _CharacterBodyState extends State<CharacterBody> {
             text: _character[index].name,
             context: context,
             size: size,
+            maxLines: 1,
           ),
 
           // Character Species.
