@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:rick_and_morty_wiki_apirest_flutter/app_exporter.dart';
 import 'package:rick_and_morty_wiki_apirest_flutter/ui/widget/character_image_widget.dart';
+import 'package:rick_and_morty_wiki_apirest_flutter/ui/widget/widget_utils.dart';
 
 class CharacterDetailScreen extends StatelessWidget {
   final CharacterModel character;
@@ -10,7 +11,7 @@ class CharacterDetailScreen extends StatelessWidget {
       : super(key: key);
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
+    final Size size = MediaQuery.of(context).size;
     return Scaffold(
       body: SafeArea(
         child: Container(
@@ -60,34 +61,43 @@ class CharacterDetailScreen extends StatelessWidget {
                   ),
 
                   // Gender Info.
-                  _buildIndicatorText('Gender:', context, size),
-                  _buildInfoText(character.gender, context, size),
+                  WidgetUtils.buildIndicatorText('Gender:', context, size),
+                  WidgetUtils.buildInfoText(
+                    text: character.gender,
+                    context: context,
+                    size: size,
+                  ),
 
                   // Species Info.
                   const SizedBox(height: 10),
-                  _buildIndicatorText('Species:', context, size),
-                  _buildInfoText(character.species, context, size),
+                  WidgetUtils.buildIndicatorText('Species:', context, size),
+                  WidgetUtils.buildInfoText(
+                    text: character.species,
+                    context: context,
+                    size: size,
+                  ),
 
                   // Last known location Info.
                   const SizedBox(height: 10),
-                  _buildIndicatorText('Last known location:', context, size),
-                  _buildInfoText(
-                    character.location.name == 'unknown'
+                  WidgetUtils.buildIndicatorText(
+                      'Last known location:', context, size),
+                  WidgetUtils.buildInfoText(
+                    text: character.location.name == 'unknown'
                         ? 'Uknown'
                         : character.location.name,
-                    context,
-                    size,
+                    context: context,
+                    size: size,
                   ),
 
                   // Origin Info.
                   const SizedBox(height: 10),
-                  _buildIndicatorText('Origin:', context, size),
-                  _buildInfoText(
-                    character.origin.name == 'unknown'
+                  WidgetUtils.buildIndicatorText('Origin:', context, size),
+                  WidgetUtils.buildInfoText(
+                    text: character.origin.name == 'unknown'
                         ? 'Uknown'
                         : character.origin.name,
-                    context,
-                    size,
+                    context: context,
+                    size: size,
                   ),
                 ],
               ),
@@ -100,32 +110,6 @@ class CharacterDetailScreen extends StatelessWidget {
           ),
         ),
       ),
-    );
-  }
-
-  _buildInfoText(
-    String text,
-    BuildContext context,
-    Size size,
-  ) {
-    return AutoSizeText(
-      text,
-      style: Theme.of(context).textTheme.subtitle1?.copyWith(
-            fontSize: size.width / 15,
-          ),
-    );
-  }
-
-  _buildIndicatorText(
-    String text,
-    BuildContext context,
-    Size size,
-  ) {
-    return AutoSizeText(
-      text,
-      style: Theme.of(context).textTheme.subtitle2?.copyWith(
-            fontSize: size.width / 14,
-          ),
     );
   }
 
@@ -149,10 +133,10 @@ class CharacterDetailScreen extends StatelessWidget {
           ),
         ),
         const SizedBox(width: 5),
-        _buildInfoText(
-          character.status == 'unknown' ? 'Unknown' : character.status,
-          context,
-          size,
+        WidgetUtils.buildInfoText(
+          text: character.status == 'unknown' ? 'Unknown' : character.status,
+          context: context,
+          size: size,
         ),
       ],
     );
