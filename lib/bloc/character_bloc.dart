@@ -1,6 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:meta/meta.dart';
-import 'package:rick_and_morty_wiki_apirest_flutter/repository/repository_exporter.dart';
+import 'package:rick_and_morty_wiki_apirest_flutter/app_exporter.dart';
 
 part 'character_event.dart';
 part 'character_state.dart';
