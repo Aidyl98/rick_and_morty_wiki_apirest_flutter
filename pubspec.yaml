@@ -19,6 +19,9 @@ dependencies:
   # Api Rest: dio client generator, if something change, run: ` flutter pub run build_runner watch`
   retrofit: ^3.0.1+1
 
+  # State Management
+  flutter_bloc: ^7.0.1
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
