@@ -35,6 +35,9 @@ dev_dependencies:
   #Animations
   animations: ^2.0.2
 
+  #Utils
+  auto_size_text: ^3.0.0
+
 # Configuration of splash screen, if something change, run: `flutter pub run flutter_native_splash:create`
 flutter_native_splash:
   background_image: "assets/images/splash_screen.png"
