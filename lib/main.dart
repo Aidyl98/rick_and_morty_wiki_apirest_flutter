@@ -24,8 +24,9 @@ class MyApp extends StatelessWidget {
       // Define the default brightness and colors.
       colorScheme: const ColorScheme.dark(
         brightness: Brightness.dark,
-        primary: Color(0xff00a4db),
-        secondary: Color(0xff002edb),
+        primary: Color(0xff212121),
+        secondary: Color(0xff1faa00),
+        background: Color(0xff484848),
       ),
 
       // Define the default font family.
