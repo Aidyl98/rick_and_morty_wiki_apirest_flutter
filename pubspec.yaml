@@ -1,5 +1,5 @@
 name: rick_and_morty_wiki_apirest_flutter
-description: A new Flutter project.
+description: A Rick and Morty Character Wiki using ApiRest and BloC.
 
 publish_to: "none"
 
@@ -13,14 +13,17 @@ dependencies:
     sdk: flutter
   cupertino_icons: ^1.0.2
 
-  # To handle de native splash screen in all the plataforms.
-  flutter_native_splash: ^2.1.6
-
-  # Api Rest: dio client generator, if something change, run: ` flutter pub run build_runner watch`
+  # Api Rest: dio client generator, if something change, run: ` flutter pub run build_runner watch`.
   retrofit: ^3.0.1+1
 
-  # State Management
+  # State Management.
   flutter_bloc: ^7.0.1
+
+  #Animations.
+  animations: ^2.0.2
+
+  #Utils.
+  auto_size_text: ^3.0.0
 
 dev_dependencies:
   flutter_test:
@@ -32,15 +35,24 @@ dev_dependencies:
   build_runner: ^2.1.10
   json_serializable: ^6.2.0
 
-  #Animations
-  animations: ^2.0.2
+  # To handle de native splash screen, the icon and name of the app in all the plataforms.
+  flutter_native_splash: ^2.1.6
+  flutter_launcher_icons: ^0.9.2
+  flutter_app_name: ^0.1.0
 
-  #Utils
-  auto_size_text: ^3.0.0
-
-# Configuration of splash screen, if something change, run: `flutter pub run flutter_native_splash:create`
+# Configuration of splash screen, if something change, run: `flutter pub run flutter_native_splash:create`.
 flutter_native_splash:
   background_image: "assets/images/splash_screen.png"
+
+# Configuration of flutter_icons, if something change, run: `flutter pub run flutter_launcher_icons:main`.
+flutter_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/icons/app_icon.png"
+
+# Configuration of flutter_app_name, if something change, run: `flutter pub run flutter_app_name`.
+flutter_app_name:
+  name: "R & M Character Wiki"
 
 flutter:
   uses-material-design: true
