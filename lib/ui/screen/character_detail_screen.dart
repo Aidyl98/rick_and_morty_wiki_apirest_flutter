@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:rick_and_morty_wiki_apirest_flutter/app_exporter.dart';
-import 'package:rick_and_morty_wiki_apirest_flutter/ui/widget/character_image_widget.dart';
-import 'package:rick_and_morty_wiki_apirest_flutter/ui/widget/widget_utils.dart';
 
 class CharacterDetailScreen extends StatelessWidget {
   final CharacterModel character;

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:rick_and_morty_wiki_apirest_flutter/app_exporter.dart';
-import 'package:rick_and_morty_wiki_apirest_flutter/ui/widget/character_body.dart';
 
 class DisplayCharacterScreen extends StatelessWidget {
   const DisplayCharacterScreen({Key? key}) : super(key: key);
