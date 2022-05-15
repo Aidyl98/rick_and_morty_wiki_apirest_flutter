@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:rick_and_morty_wiki_apirest_flutter/ui/widget/widget_utils.dart';
+import 'package:rick_and_morty_wiki_apirest_flutter/app_exporter.dart';
 
 class CharacterImageWidget extends StatelessWidget {
   final String characterImage;
@@ -22,6 +22,17 @@ class CharacterImageWidget extends StatelessWidget {
             return imageChunkEvent == null
                 ? widget
                 : WidgetUtils.buildCircularProgressIndicator(context);
+          },
+          errorBuilder: (context, object, stackTreace) {
+            return CircleAvatar(
+              radius: radiusImage,
+              child: const ClipOval(
+                child: Image(
+                  fit: BoxFit.cover,
+                  image: AssetImage('assets/images/image_error.png'),
+                ),
+              ),
+            );
           },
         ),
       ),
