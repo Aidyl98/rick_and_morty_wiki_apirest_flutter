@@ -16,6 +16,7 @@ class WidgetUtils {
             color: color,
           ),
       textAlign: textAlign,
+      maxLines: 1,
     );
   }
 
