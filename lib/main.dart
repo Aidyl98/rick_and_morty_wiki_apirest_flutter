@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:rick_and_morty_wiki_apirest_flutter/ui/screen/character_screen.dart';
 
 void main() {
@@ -82,5 +83,31 @@ class MyApp extends StatelessWidget {
         ),
       ),
     );
+  }
+}
+
+class CharacterBlocObserver extends BlocObserver {
+  @override
+  void onEvent(Bloc bloc, Object? event) {
+    print(event);
+    super.onEvent(bloc, event);
+  }
+
+  @override
+  void onChange(BlocBase bloc, Change change) {
+    print(change);
+    super.onChange(bloc, change);
+  }
+
+  @override
+  void onTransition(Bloc bloc, Transition transition) {
+    print(transition);
+    super.onTransition(bloc, transition);
+  }
+
+  @override
+  void onError(BlocBase bloc, Object error, StackTrace stackTrace) {
+    print('$error, $stackTrace');
+    super.onError(bloc, error, stackTrace);
   }
 }
