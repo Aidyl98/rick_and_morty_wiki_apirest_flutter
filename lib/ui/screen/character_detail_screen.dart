@@ -107,4 +107,34 @@ class CharacterDetailScreen extends StatelessWidget {
     );
   }
 
+  _buildStatusInfoText(
+    BuildContext context,
+    Size size,
+  ) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Container(
+          height: 10,
+          width: 10,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(8),
+            color: character.status == 'Alive'
+                ? Colors.green
+                : character.status == 'Dead'
+                    ? Colors.red
+                    : Colors.grey,
+          ),
+        ),
+        const SizedBox(width: 5),
+        _buildInfoText(
+          character.status == 'unknown' ? 'Unknown' : character.status,
+          context,
+          size,
+        ),
+      ],
+    );
+  }
+
+ 
 }
