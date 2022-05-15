@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
     ]);
     return MaterialApp(
       title: 'Rick and Morty Character Wiki',
-      debugShowCheckedModeBanner: true,
+      debugShowCheckedModeBanner: false,
       theme: _buildTheme(),
       initialRoute: '/',
       routes: {
