@@ -136,5 +136,20 @@ class CharacterDetailScreen extends StatelessWidget {
     );
   }
 
- 
+  _buildCharacterImage(
+    String characterImage,
+    Size size,
+  ) {
+    return SizedBox(
+      width: double.infinity,
+      height: size.height / 3.2,
+      child: Container(
+        alignment: const Alignment(0.0, 2.5),
+        child: CharacterImageWidget(
+          characterImage: characterImage,
+          radiusImage: size.height / 10,
+        ),
+      ),
+    );
+  }
 }
