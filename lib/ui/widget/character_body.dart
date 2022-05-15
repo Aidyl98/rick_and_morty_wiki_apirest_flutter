@@ -1,11 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:animations/animations.dart';
-
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:rick_and_morty_wiki_apirest_flutter/app_exporter.dart';
-import 'package:rick_and_morty_wiki_apirest_flutter/ui/screen/character_detail_screen.dart';
-import 'package:rick_and_morty_wiki_apirest_flutter/ui/widget/character_image_widget.dart';
-import 'package:rick_and_morty_wiki_apirest_flutter/ui/widget/widget_utils.dart';
 
 class CharacterBody extends StatefulWidget {
   const CharacterBody({Key? key}) : super(key: key);
