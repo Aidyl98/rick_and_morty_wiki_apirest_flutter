@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rick_and_morty_wiki_apirest_flutter/ui/widget/widget_utils.dart';
 
 class CharacterImageWidget extends StatelessWidget {
   final String characterImage;
@@ -20,10 +21,7 @@ class CharacterImageWidget extends StatelessWidget {
           loadingBuilder: (context, widget, imageChunkEvent) {
             return imageChunkEvent == null
                 ? widget
-                : CircularProgressIndicator(
-                    color: Theme.of(context).colorScheme.secondary,
-                    strokeWidth: 8,
-                  );
+                : WidgetUtils.buildCircularProgressIndicator(context);
           },
         ),
       ),
