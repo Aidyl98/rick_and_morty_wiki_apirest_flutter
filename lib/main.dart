@@ -112,4 +112,53 @@ class _MyHomePageState extends State<MyHomePage> {
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
+
+  ThemeData _buildTheme() {
+    return ThemeData(
+      visualDensity: VisualDensity.adaptivePlatformDensity,
+
+      // Define the default font family.
+      fontFamily: "AkayaTelivigala",
+
+      // Define the default `TextTheme`. Use this to specify the default
+      // text styling for headlines, titles, bodies of text, and more.
+      textTheme: const TextTheme(
+        // Use for the name of the character in detail-view.
+        headline1: TextStyle(
+          fontWeight: FontWeight.bold,
+          fontSize: 40,
+        ),
+
+        // Use for the name of the app in app-bar.
+        headline6: TextStyle(
+          fontSize: 30,
+          color: Color(0xff2a3762),
+          shadows: [
+            Shadow(
+              color: Colors.blue,
+              blurRadius: 10.0,
+              offset: Offset(3.0, 3.0),
+            ),
+            Shadow(
+              color: Colors.red,
+              blurRadius: 10.0,
+              offset: Offset(-3.0, 3.0),
+            ),
+          ],
+        ),
+
+        // Use for the name of the character in list-view.
+        subtitle1: TextStyle(
+          fontWeight: FontWeight.bold,
+          fontSize: 20,
+        ),
+
+        // Use for the status and number of the character in list-view.
+        subtitle2: TextStyle(
+          fontWeight: FontWeight.normal,
+          fontSize: 15,
+        ),
+      ),
+    );
+  }
 }
