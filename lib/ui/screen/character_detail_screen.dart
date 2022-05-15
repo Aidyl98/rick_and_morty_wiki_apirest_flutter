@@ -81,4 +81,30 @@ class CharacterDetailScreen extends StatelessWidget {
     );
   }
 
+  _buildInfoText(
+    String text,
+    BuildContext context,
+    Size size,
+  ) {
+    return AutoSizeText(
+      text,
+      style: Theme.of(context).textTheme.subtitle1?.copyWith(
+            fontSize: size.width / 15,
+          ),
+    );
+  }
+
+  _buildIndicatorText(
+    String text,
+    BuildContext context,
+    Size size,
+  ) {
+    return AutoSizeText(
+      text,
+      style: Theme.of(context).textTheme.subtitle2?.copyWith(
+            fontSize: size.width / 14,
+          ),
+    );
+  }
+
 }
