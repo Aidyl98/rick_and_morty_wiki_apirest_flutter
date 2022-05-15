@@ -28,6 +28,12 @@ flutter_native_splash:
 flutter:
   uses-material-design: true
 
+  fonts:
+    - family: AkayaTelivigala
+      fonts:
+        - asset: assets/fonts/AkayaTelivigala-Regular.ttf
+          weight: 400
+
   # To add assets to your application, add an assets section, like this:
   # assets:
   #   - images/a_dot_burr.jpeg
