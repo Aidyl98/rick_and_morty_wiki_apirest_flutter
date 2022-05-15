@@ -147,6 +147,58 @@ class _CharacterBodyState extends State<CharacterBody> {
     );
   }
 
+  // Tile that shows the list of characters.
+  _buildClosed(int index, Size size) {
+    return InkWell(
+      splashColor: Theme.of(context).colorScheme.secondary,
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => CharacterDetailScreen(
+              character: _character[index],
+            ),
+          ),
+        );
+      },
+      child: Card(
+        child: ListTile(
+          // Character Image Avatar.
+          leading: CharacterImageWidget(
+            characterImage: _character[index].image,
+          ),
+          // Character Name.
+          title: WidgetUtils.buildInfoText(
+            text: _character[index].name,
+            context: context,
+            size: size,
+          ),
+
+          // Character Species.
+          subtitle: Row(
+            children: [
+              WidgetUtils.buildIndicatorText(
+                _character[index].species,
+                context,
+                size,
+              ),
+              WidgetUtils.buildIndicatorText(
+                index.toString(),
+                context,
+                size,
+              ),
+            ],
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          ),
+        ),
+      ),
+    );
+  }
+
+  // Shows the Detail Screen of the selected character.
+  _buildOpen(int index) {
+    return CharacterDetailScreen(character: _character[index]);
+  }
 
   @override
   void dispose() {
