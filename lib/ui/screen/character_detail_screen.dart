@@ -48,7 +48,16 @@ class CharacterDetailScreen extends StatelessWidget {
                   _buildStatusInfoText(context, size),
                   const SizedBox(height: 15),
 
-                  _buildInfoText('Character Details', context, size),
+                  AutoSizeText(
+                    'Character Details',
+                    style: Theme.of(context).textTheme.subtitle1?.copyWith(
+                          fontSize: size.width / 14,
+                          decoration: TextDecoration.underline,
+                          decorationThickness: 2,
+                          decorationColor:
+                              Theme.of(context).colorScheme.secondary,
+                        ),
+                  ),
 
                   // Gender Info.
                   _buildIndicatorText('Gender:', context, size),
