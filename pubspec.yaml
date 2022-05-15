@@ -16,10 +16,18 @@ dependencies:
   # To handle de native splash screen in all the plataforms.
   flutter_native_splash: ^2.1.6
 
+  # Api Rest: dio client generator, if something change, run: ` flutter pub run build_runner watch`
+  retrofit: ^3.0.1+1
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^1.0.0
+
+  # Api Rest: dio client generator.
+  retrofit_generator: ^4.0.1
+  build_runner: ^2.1.10
+  json_serializable: ^6.2.0
 
 # Configuration of splash screen, if something change, run: `flutter pub run flutter_native_splash:create`
 flutter_native_splash:
