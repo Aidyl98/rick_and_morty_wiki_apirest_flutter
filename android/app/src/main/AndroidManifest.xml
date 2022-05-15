@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.rick_and_morty_wiki_apirest_flutter">
    <application
-        android:label="rick_and_morty_wiki_apirest_flutter"
+        android:label="Rick and Morty Wiki"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
