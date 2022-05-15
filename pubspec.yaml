@@ -52,7 +52,7 @@ flutter_icons:
 
 # Configuration of flutter_app_name, if something change, run: `flutter pub run flutter_app_name`.
 flutter_app_name:
-  name: "R & M Character Wiki"
+  name: "Rick and Morty Wiki"
 
 flutter:
   uses-material-design: true
