@@ -163,12 +163,12 @@ class _CharacterBodyState extends State<CharacterBody> {
         subtitle: Row(
           children: [
             WidgetUtils.buildIndicatorText(
-              _character[index].species,
+              _character[index].status,
               context,
               size,
             ),
             WidgetUtils.buildIndicatorText(
-              index.toString(),
+              '#' + index.toString(),
               context,
               size,
             ),
