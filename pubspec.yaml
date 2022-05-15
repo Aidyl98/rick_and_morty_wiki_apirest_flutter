@@ -53,3 +53,4 @@ flutter:
 
   assets:
     - assets/images/detail_view.jpg
+    - assets/images/image_error.png
