@@ -11,71 +11,84 @@ class CharacterDetailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    return SafeArea(
-      child: Container(
-        color: Theme.of(context).colorScheme.background,
-        child: Column(
-          children: [
-            Container(
-              decoration: const BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage('assets/images/detail_view.jpg'),
-                  fit: BoxFit.fill,
-                ),
-              ),
-              child: _buildCharacterImage(character.image, size),
-            ),
-            SizedBox(
-              height: size.height / 12,
-            ),
-
-            // Character Name.
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 8.0),
-              child: AutoSizeText(
-                character.name,
-                style: Theme.of(context).textTheme.headline6?.copyWith(
-                      fontSize: size.width / 9,
+    return Scaffold(
+      body: SafeArea(
+        child: Container(
+          color: Theme.of(context).colorScheme.background,
+          child: Stack(
+            children: [
+              Column(
+                children: [
+                  Container(
+                    decoration: const BoxDecoration(
+                      image: DecorationImage(
+                        image: AssetImage('assets/images/detail_view.jpg'),
+                        fit: BoxFit.fill,
+                      ),
                     ),
-                maxLines: 1,
+                    child: _buildCharacterImage(character.image, size),
+                  ),
+                  SizedBox(
+                    height: size.height / 12,
+                  ),
+
+                  // Character Name.
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                    child: AutoSizeText(
+                      character.name,
+                      style: Theme.of(context).textTheme.headline6?.copyWith(
+                            fontSize: size.width / 9,
+                          ),
+                      maxLines: 1,
+                    ),
+                  ),
+
+                  // Status Info.
+                  _buildStatusInfoText(context, size),
+                  const SizedBox(height: 15),
+
+                  _buildInfoText('Character Details', context, size),
+
+                  // Gender Info.
+                  _buildIndicatorText('Gender:', context, size),
+                  _buildInfoText(character.gender, context, size),
+
+                  // Species Info.
+                  const SizedBox(height: 10),
+                  _buildIndicatorText('Species:', context, size),
+                  _buildInfoText(character.species, context, size),
+
+                  // Last known location Info.
+                  const SizedBox(height: 10),
+                  _buildIndicatorText('Last known location:', context, size),
+                  _buildInfoText(
+                    character.location.name == 'unknown'
+                        ? 'Uknown'
+                        : character.location.name,
+                    context,
+                    size,
+                  ),
+
+                  // Origin Info.
+                  const SizedBox(height: 10),
+                  _buildIndicatorText('Origin:', context, size),
+                  _buildInfoText(
+                    character.origin.name == 'unknown'
+                        ? 'Uknown'
+                        : character.origin.name,
+                    context,
+                    size,
+                  ),
+                ],
               ),
-            ),
-
-            // Status Info.
-            _buildStatusInfoText(context, size),
-
-            // Gender Info.
-            const SizedBox(height: 15),
-            _buildIndicatorText('Gender:', context, size),
-            _buildInfoText(character.gender, context, size),
-
-            // Species Info.
-            const SizedBox(height: 10),
-            _buildIndicatorText('Species:', context, size),
-            _buildInfoText(character.species, context, size),
-
-            // Last known location Info.
-            const SizedBox(height: 10),
-            _buildIndicatorText('Last known location:', context, size),
-            _buildInfoText(
-              character.location.name == 'unknown'
-                  ? 'Uknown'
-                  : character.location.name,
-              context,
-              size,
-            ),
-
-            // Origin Info.
-            const SizedBox(height: 10),
-            _buildIndicatorText('Origin:', context, size),
-            _buildInfoText(
-              character.origin.name == 'unknown'
-                  ? 'Uknown'
-                  : character.origin.name,
-              context,
-              size,
-            ),
-          ],
+              const Positioned(
+                top: 5,
+                left: 5,
+                child: BackButton(color: Colors.white),
+              ),
+            ],
+          ),
         ),
       ),
     );
