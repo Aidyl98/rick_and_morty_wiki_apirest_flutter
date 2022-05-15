@@ -20,7 +20,10 @@ class CharacterImageWidget extends StatelessWidget {
           loadingBuilder: (context, widget, imageChunkEvent) {
             return imageChunkEvent == null
                 ? widget
-                : const CircularProgressIndicator();
+                : CircularProgressIndicator(
+                    color: Theme.of(context).colorScheme.secondary,
+                    strokeWidth: 8,
+                  );
           },
         ),
       ),
