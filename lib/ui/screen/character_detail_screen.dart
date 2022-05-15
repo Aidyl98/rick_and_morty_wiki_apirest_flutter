@@ -10,6 +10,7 @@ class CharacterDetailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
+    final double sizeBoxHeight = size.height / 90;
     return Scaffold(
       body: SafeArea(
         child: Container(
@@ -45,7 +46,7 @@ class CharacterDetailScreen extends StatelessWidget {
 
                   // Status Info.
                   _buildStatusInfoText(context, size),
-                  const SizedBox(height: 15),
+                  SizedBox(height: sizeBoxHeight),
 
                   AutoSizeText(
                     'Character Details',
@@ -67,7 +68,7 @@ class CharacterDetailScreen extends StatelessWidget {
                   ),
 
                   // Species Info.
-                  const SizedBox(height: 10),
+                  SizedBox(height: sizeBoxHeight),
                   WidgetUtils.buildIndicatorText('Species:', context, size),
                   WidgetUtils.buildInfoText(
                     text: character.species,
@@ -76,7 +77,7 @@ class CharacterDetailScreen extends StatelessWidget {
                   ),
 
                   // Last known location Info.
-                  const SizedBox(height: 10),
+                  SizedBox(height: sizeBoxHeight),
                   WidgetUtils.buildIndicatorText(
                       'Last known location:', context, size),
                   WidgetUtils.buildInfoText(
@@ -88,7 +89,7 @@ class CharacterDetailScreen extends StatelessWidget {
                   ),
 
                   // Origin Info.
-                  const SizedBox(height: 10),
+                  SizedBox(height: sizeBoxHeight),
                   WidgetUtils.buildIndicatorText('Origin:', context, size),
                   WidgetUtils.buildInfoText(
                     text: character.origin.name == 'unknown'
