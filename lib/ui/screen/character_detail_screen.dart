@@ -10,7 +10,7 @@ class CharacterDetailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
-    final double sizeBoxHeight = size.height / 90;
+    final double sizeBoxHeight = size.height / 120;
     return Scaffold(
       body: SafeArea(
         child: Container(
