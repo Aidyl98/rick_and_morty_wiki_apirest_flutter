@@ -13,54 +13,65 @@ class UIDrawer extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     double iconsSize = size.width / 13;
     return Scaffold(
-      body: SafeArea(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.end,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            _buildListTile(
-              context: context,
-              size: size,
-              title: "GitHub.",
-              leading: Icon(
-                FontAwesomeIcons.github,
-                size: iconsSize,
+      body: Container(
+        decoration: const BoxDecoration(
+          color: Colors.transparent, //pa si por si acaso
+          image: DecorationImage(
+            image: AssetImage('assets/images/drawer.jpg'),
+            fit: BoxFit.cover,
+          ),
+        ),
+        child: SafeArea(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              _buildListTile(
+                context: context,
+                size: size,
+                title: "GitHub.",
+                leading: Icon(
+                  FontAwesomeIcons.github,
+                  size: iconsSize,
+                ),
+                tapHandler: () =>
+                    _openURL("https://github.com/Aidyl98", context),
               ),
-              tapHandler: () => _openURL("https://github.com/Aidyl98", context),
-            ),
-            _buildListTile(
-              context: context,
-              size: size,
-              title: "LinkeIn.",
-              leading: Icon(
-                FontAwesomeIcons.linkedin,
-                size: iconsSize,
+              _buildListTile(
+                context: context,
+                size: size,
+                title: "LinkeIn.",
+                leading: Icon(
+                  FontAwesomeIcons.linkedin,
+                  size: iconsSize,
+                ),
+                tapHandler: () => _openURL(
+                    "https://www.linkedin.com/in/aidyl-albalah", context),
               ),
-              tapHandler: () => _openURL(
-                  "https://www.linkedin.com/in/aidyl-albalah", context),
-            ),
-            _buildListTile(
-              context: context,
-              size: size,
-              title: "HackerRanck.",
-              leading: Icon(
-                FontAwesomeIcons.hackerrank,
-                size: iconsSize,
+              _buildListTile(
+                context: context,
+                size: size,
+                title: "HackerRanck.",
+                leading: Icon(
+                  FontAwesomeIcons.hackerrank,
+                  size: iconsSize,
+                ),
+                tapHandler: () => _openURL(
+                    "https://www.hackerrank.com/jgarciaalbalah", context),
               ),
-              tapHandler: () => _openURL(
-                  "https://www.hackerrank.com/jgarciaalbalah", context),
-            ),
-            _buildListTile(
-              context: context,
-              size: size,
-              title: "Gmail.",
-              leading: Icon(
-                FontAwesomeIcons.google,
-                size: iconsSize,
+              _buildListTile(
+                context: context,
+                size: size,
+                title: "Gmail.",
+                leading: Icon(
+                  FontAwesomeIcons.google,
+                  size: iconsSize,
+                ),
+                tapHandler: () =>
+                    _openURL("mailto:jgarciaalbalah@gmail.com", context),
               ),
-              tapHandler: () => _openURL("jgarciaalbalah@gmail.com", context),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
@@ -104,14 +115,14 @@ class UIDrawer extends StatelessWidget {
             fontSize: size.width / 20,
             shadows: [
               Shadow(
-                color: Colors.blue.shade900,
+                color: Theme.of(context).colorScheme.secondary,
                 blurRadius: 10.0,
                 offset: const Offset(3.0, 3.0),
               ),
-              const Shadow(
-                color: Colors.black,
+              Shadow(
+                color: Theme.of(context).colorScheme.background,
                 blurRadius: 10.0,
-                offset: Offset(-3.0, 3.0),
+                offset: const Offset(-3.0, 3.0),
               ),
             ],
           ),
