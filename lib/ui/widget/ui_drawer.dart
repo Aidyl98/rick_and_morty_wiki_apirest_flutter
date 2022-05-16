@@ -1,10 +1,11 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:rick_and_morty_wiki_apirest_flutter/app_exporter.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class UIDrawer extends StatelessWidget {
-  UIDrawer({
+  const UIDrawer({
     Key? key,
   }) : super(key: key);
 
@@ -15,7 +16,7 @@ class UIDrawer extends StatelessWidget {
     return Scaffold(
       body: Container(
         decoration: const BoxDecoration(
-          color: Colors.transparent, //pa si por si acaso
+          color: Colors.transparent,
           image: DecorationImage(
             image: AssetImage('assets/images/drawer.jpg'),
             fit: BoxFit.cover,
@@ -26,6 +27,16 @@ class UIDrawer extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              Padding(
+                padding: const EdgeInsets.all(20.0),
+                child: AutoSizeText(
+                  'Contact me at:',
+                  style: Theme.of(context).textTheme.headline6?.copyWith(
+                        fontSize: size.width / 4,
+                      ),
+                  maxLines: 1,
+                ),
+              ),
               _buildListTile(
                 context: context,
                 size: size,
@@ -101,11 +112,7 @@ class UIDrawer extends StatelessWidget {
     required Size size,
     required BuildContext context,
   }) {
-    return Padding(
-      padding: EdgeInsets.symmetric(
-        vertical: size.height / 75,
-        horizontal: 2.0,
-      ),
+    return Center(
       child: ListTile(
         leading: leading,
         minLeadingWidth: size.width / 25,
