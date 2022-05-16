@@ -17,13 +17,16 @@ dependencies:
   retrofit: ^3.0.1+1
 
   # State Management.
-  flutter_bloc: ^7.0.1
+  flutter_bloc: ^8.0.1
 
   #Animations.
   animations: ^2.0.2
 
   #Utils.
   auto_size_text: ^3.0.0
+  cached_network_image: ^3.2.0
+  font_awesome_flutter: ^10.1.0
+  url_launcher: ^6.0.18
 
 dev_dependencies:
   flutter_test:
@@ -66,3 +69,4 @@ flutter:
   assets:
     - assets/images/detail_view.jpg
     - assets/images/image_error.png
+    - assets/icons/app_icon.png
