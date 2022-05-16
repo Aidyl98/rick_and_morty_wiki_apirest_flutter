@@ -27,8 +27,9 @@ class UIDrawer extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              const BackButton(color: Colors.white),
               Padding(
-                padding: const EdgeInsets.all(20.0),
+                padding: const EdgeInsets.symmetric(horizontal: 20.0),
                 child: AutoSizeText(
                   'Contact me at:',
                   style: Theme.of(context).textTheme.headline6?.copyWith(
@@ -112,30 +113,28 @@ class UIDrawer extends StatelessWidget {
     required Size size,
     required BuildContext context,
   }) {
-    return Center(
-      child: ListTile(
-        leading: leading,
-        minLeadingWidth: size.width / 25,
-        title: Text(
-          title,
-          style: Theme.of(context).textTheme.subtitle1?.copyWith(
-            fontSize: size.width / 20,
-            shadows: [
-              Shadow(
-                color: Theme.of(context).colorScheme.secondary,
-                blurRadius: 10.0,
-                offset: const Offset(3.0, 3.0),
-              ),
-              Shadow(
-                color: Theme.of(context).colorScheme.background,
-                blurRadius: 10.0,
-                offset: const Offset(-3.0, 3.0),
-              ),
-            ],
-          ),
+    return ListTile(
+      leading: leading,
+      minLeadingWidth: size.width / 15,
+      title: Text(
+        title,
+        style: Theme.of(context).textTheme.subtitle1?.copyWith(
+          fontSize: size.width / 15,
+          shadows: [
+            Shadow(
+              color: Theme.of(context).colorScheme.secondary,
+              blurRadius: 10.0,
+              offset: const Offset(3.0, 3.0),
+            ),
+            Shadow(
+              color: Theme.of(context).colorScheme.background,
+              blurRadius: 10.0,
+              offset: const Offset(-3.0, 3.0),
+            ),
+          ],
         ),
-        onTap: () => tapHandler(),
       ),
+      onTap: () => tapHandler(),
     );
   }
 }
