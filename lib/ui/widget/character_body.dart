@@ -159,16 +159,18 @@ class _CharacterBodyState extends State<CharacterBody> {
           maxLines: 1,
         ),
 
-        // Character Species.
+        // Character Status.
         subtitle: Row(
           children: [
             WidgetUtils.buildIndicatorText(
-              _character[index].status,
+              _character[index].status == 'unknown'
+                  ? 'Unknown'
+                  : _character[index].status,
               context,
               size,
             ),
             WidgetUtils.buildIndicatorText(
-              '#' + index.toString(),
+              '#${index + 1}',
               context,
               size,
             ),
