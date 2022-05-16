@@ -6,7 +6,7 @@ part 'character_event.dart';
 part 'character_state.dart';
 
 class CharacterBloc extends Bloc<CharacterEvent, CharacterState> {
-  final CharacterServiceImplementation characterRepository;
+  final CharacterService characterRepository;
   int page = 1;
   bool isFetching = false;
 
@@ -14,17 +14,24 @@ class CharacterBloc extends Bloc<CharacterEvent, CharacterState> {
     required this.characterRepository,
   }) : super(CharacterInitial());
 
+  void fetch() {
+    add(const CharacterFetchEvent());
+  }
+
   @override
   Stream<CharacterState> mapEventToState(CharacterEvent event) async* {
     if (event is CharacterFetchEvent) {
       try {
         yield const CharacterLoadingState(message: 'Loading Characters');
+        isFetching = true;
         final response = await characterRepository.getAllCharacters(page);
+        isFetching = false;
         yield CharacterSuccessState(
           character: response.toList(),
         );
         page++;
       } on Exception {
+        isFetching = false;
         yield const CharacterErrorState(
             error: "Couldn't fetch characters. Is the device online?");
       }
