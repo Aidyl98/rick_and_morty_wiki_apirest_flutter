@@ -20,6 +20,7 @@ class DisplayCharacterScreen extends StatelessWidget {
             maxLines: 1,
           ),
         ),
+        drawer: UIDrawer(),
         body: const CharacterBody(),
       ),
     );
