@@ -60,7 +60,6 @@ class _CharacterBodyState extends State<CharacterBody> {
                 ),
               ),
             );
-            BlocProvider.of<CharacterBloc>(context).isFetching = false;
           }
           return;
         },
@@ -72,7 +71,6 @@ class _CharacterBodyState extends State<CharacterBody> {
             // Add the fetched data to the list.
           } else if (characterState is CharacterSuccessState) {
             _character.addAll(characterState.character);
-            BlocProvider.of<CharacterBloc>(context).isFetching = false;
             ScaffoldMessenger.of(context).hideCurrentSnackBar();
             // Error View.
           } else if (characterState is CharacterErrorState &&
@@ -89,8 +87,7 @@ class _CharacterBodyState extends State<CharacterBody> {
                   tooltip: "Try to fetch the data.",
                   onPressed: () {
                     BlocProvider.of<CharacterBloc>(context)
-                      ..isFetching = true
-                      ..add(const CharacterFetchEvent());
+                        .add(const CharacterFetchEvent());
                   },
                   icon: const Icon(
                     Icons.refresh,
@@ -113,9 +110,7 @@ class _CharacterBodyState extends State<CharacterBody> {
                 if (_scrollController.offset ==
                         _scrollController.position.maxScrollExtent &&
                     !BlocProvider.of<CharacterBloc>(context).isFetching) {
-                  BlocProvider.of<CharacterBloc>(context)
-                    ..isFetching = true
-                    ..add(const CharacterFetchEvent());
+                  BlocProvider.of<CharacterBloc>(context).fetch();
                 }
               }),
             itemBuilder: (context, index) {
