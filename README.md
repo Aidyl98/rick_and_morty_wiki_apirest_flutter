@@ -6,7 +6,9 @@ Api that provide the information: https://rickandmortyapi.com/documentation/#res
 
 This app requires internet conextion.
 
-<img src="https://github.com/Aidyl98/rick_and_morty_wiki_apirest_flutter/blob/master/screenshots/splash_screen.jpg" alt="bottom_center" width="150"/> <img src="https://github.com/Aidyl98/rick_and_morty_wiki_apirest_flutter/blob/master/screenshots/drawer.jpg" alt="center" width="150"/> <img src="https://github.com/Aidyl98/rick_and_morty_wiki_apirest_flutter/blob/master/screenshots/detail_view.jpg" alt="bottom_right" width="150"/>  <img src="https://github.com/Aidyl98/rick_and_morty_wiki_apirest_flutter/blob/master/screenshots/list_view.jpg" alt="bottom_left" width="150"/> <img src="https://github.com/Aidyl98/rick_and_morty_wiki_apirest_flutter/blob/master/screenshots/load_images.jpg" alt="bottom_center" width="150"/> <img src="https://github.com/Aidyl98/rick_and_morty_wiki_apirest_flutter/blob/master/screenshots/load_data.jpg" alt="bottom_left" width="150"/> 
+<img src="https://github.com/Aidyl98/rick_and_morty_wiki_apirest_flutter/blob/master/screenshots/splash_screen.jpg" alt="bottom_center" width="200"/> <img src="https://github.com/Aidyl98/rick_and_morty_wiki_apirest_flutter/blob/master/screenshots/detail_view.jpg" alt="bottom_right" width="200"/> <img src="https://github.com/Aidyl98/rick_and_morty_wiki_apirest_flutter/blob/master/screenshots/drawer.jpg" alt="center" width="200"/>
+
+<img src="https://github.com/Aidyl98/rick_and_morty_wiki_apirest_flutter/blob/master/screenshots/list_view.jpg" alt="bottom_left" width="200"/> <img src="https://github.com/Aidyl98/rick_and_morty_wiki_apirest_flutter/blob/master/screenshots/load_images.jpg" alt="bottom_center" width="200"/> <img src="https://github.com/Aidyl98/rick_and_morty_wiki_apirest_flutter/blob/master/screenshots/load_data.jpg" alt="bottom_left" width="200"/> 
 
 ## Contents
 - [API  Rest with Retrofit](https://pub.dev/packages/retrofit)
