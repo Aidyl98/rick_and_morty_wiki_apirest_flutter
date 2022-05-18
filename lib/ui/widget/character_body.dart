@@ -22,6 +22,7 @@ class _CharacterBodyState extends State<CharacterBody> {
         listener: (context, characterState) {
           // Loading Data.
           if (characterState is CharacterLoadingState) {
+            ScaffoldMessenger.of(context).clearSnackBars();
             ScaffoldMessenger.of(context).showSnackBar(
               SnackBar(
                 content: WidgetUtils.buildInfoText(
@@ -71,7 +72,7 @@ class _CharacterBodyState extends State<CharacterBody> {
             // Add the fetched data to the list.
           } else if (characterState is CharacterSuccessState) {
             _character.addAll(characterState.character);
-            ScaffoldMessenger.of(context).hideCurrentSnackBar();
+            ScaffoldMessenger.of(context).clearSnackBars();
             // Error View.
           } else if (characterState is CharacterErrorState &&
               _character.isEmpty) {
