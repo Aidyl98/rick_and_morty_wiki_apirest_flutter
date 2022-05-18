@@ -65,6 +65,7 @@ class CharacterDetailScreen extends StatelessWidget {
                     text: character.gender,
                     context: context,
                     size: size,
+                    maxLines: 1,
                   ),
 
                   // Species Info.
@@ -74,6 +75,7 @@ class CharacterDetailScreen extends StatelessWidget {
                     text: character.species,
                     context: context,
                     size: size,
+                    maxLines: 1,
                   ),
 
                   // Last known location Info.
@@ -86,6 +88,7 @@ class CharacterDetailScreen extends StatelessWidget {
                         : character.location.name,
                     context: context,
                     size: size,
+                    maxLines: 1,
                   ),
 
                   // Origin Info.
@@ -97,6 +100,7 @@ class CharacterDetailScreen extends StatelessWidget {
                         : character.origin.name,
                     context: context,
                     size: size,
+                    maxLines: 1,
                   ),
                 ],
               ),
