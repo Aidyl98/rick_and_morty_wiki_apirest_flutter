@@ -15,6 +15,7 @@ class CharacterBloc extends Bloc<CharacterEvent, CharacterState> {
   }) : super(CharacterInitial());
 
   void fetch() {
+    isFetching = true;
     add(const CharacterFetchEvent());
   }
 
