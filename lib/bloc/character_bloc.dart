@@ -15,6 +15,7 @@ class CharacterBloc extends Bloc<CharacterEvent, CharacterState> {
   }) : super(CharacterInitial());
 
   void fetch() {
+    isFetching = true;
     add(const CharacterFetchEvent());
   }
 
@@ -30,10 +31,11 @@ class CharacterBloc extends Bloc<CharacterEvent, CharacterState> {
           character: response.toList(),
         );
         page++;
-      } on Exception {
+      } on Exception catch (exc) {
         isFetching = false;
-        yield const CharacterErrorState(
-            error: "Couldn't fetch characters. Is the device online?");
+        yield CharacterErrorState(
+          error: exc.toString().replaceAll("Exception: ", ""),
+        );
       }
     }
   }
